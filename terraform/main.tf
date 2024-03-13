@@ -4,9 +4,6 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket         = "tc05-lambda"
-    key            = "terraform.tfstate"
-    region         = "us-east-1"
   }
 }
 

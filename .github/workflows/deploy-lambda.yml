@@ -67,7 +67,7 @@ jobs:
 
             - name: Terraform Init
               id: init
-              run: cd terraform && terraform init
+              run: cd terraform && terraform init -backend-config="bucket=${{vars.TF_VAR_TFSTATE_SHARED}}" -backend-config="key=terraform.tfstate" -backend-config="region=${{ secrets.AWS_REGION }}"
               
             - name: Terraform Plan
               run: cd terraform && terraform plan
